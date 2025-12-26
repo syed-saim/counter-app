@@ -1,8 +1,23 @@
-// Select the button and heading
-const button = document.getElementById('changeBtn');
-const title = document.getElementById('title');
+const counter = document.getElementById("counter");
+const increaseBtn = document.getElementById("increase");
+const decreaseBtn = document.getElementById("decrease");
+const resetBtn = document.getElementById("reset");
 
-// Add click event to change color
-button.addEventListener('click', () => {
-    title.style.color = title.style.color === 'red' ? 'blue' : 'red';
+let count = 0;
+
+increaseBtn.addEventListener("click", () => {
+  count++;
+  counter.textContent = count;
+});
+
+decreaseBtn.addEventListener("click", () => {
+  if (count > 0) {
+    count--;
+    counter.textContent = count;
+  }
+});
+
+resetBtn.addEventListener("click", () => {
+  count = 0;
+  counter.textContent = count;
 });
